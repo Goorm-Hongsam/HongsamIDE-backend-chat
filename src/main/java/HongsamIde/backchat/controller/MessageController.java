@@ -28,7 +28,7 @@ public class MessageController {
     @MessageMapping("/chat/message")
     public void message(ChatMessage message) {
         if (ChatMessage.MessageType.ENTER.equals(message.getType())) {
-            chatRoomRepository.enterChatRoom(message.getRoomId(),message.getUuid());
+            chatRoomRepository.enterChatRoom(message.getRoomId(), message.getUuid());
             message.setMessage(message.getSender() + "님이 입장하셨습니다.");
 
             log.info("입장 메세지 전송");
@@ -62,5 +62,9 @@ public class MessageController {
 //        sendingOperations.convertAndSend("/sub/chat/room/"+message.getRoomId(),message);
 //    }
 
+    @GetMapping("/")
+    public int test() {
+        return 1;
+    }
 }
 
