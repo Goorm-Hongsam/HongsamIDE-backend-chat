@@ -64,7 +64,7 @@ public class MessageController {
 
     @GetMapping("/")
     public int test() {
-        return 1;
+        return 2;
     }
 }
 
